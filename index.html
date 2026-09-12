@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>AI Workforce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app" class="app">
+
+  <!-- MOBILE TOP BAR -->
+  <header class="mobile-header">
+    <button id="mobile-menu-button" class="icon-button">☰</button>
+    <div class="brand-small">
+      <div class="brand-mark">AI</div>
+      <div>
+        <strong>AI Workforce</strong>
+        <span>Business Workspace</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar">
+
+    <div class="brand">
+      <div class="brand-mark">AI</div>
+      <div>
+        <strong>AI Workforce</strong>
+        <span>Business Workspace</span>
+      </div>
+    </div>
+
+    <nav class="navigation">
+
+      <button class="nav-item active" data-page="dashboard">
+        <span>▦</span>
+        <span>Dashboard</span>
+      </button>
+
+      <button class="nav-item" data-page="worker">
+        <span>◉</span>
+        <span>AI Worker</span>
+      </button>
+
+      <button class="nav-item" data-page="teach">
+        <span>✦</span>
+        <span>Teach Worker</span>
+      </button>
+
+      <button class="nav-item" data-page="knowledge">
+        <span>▤</span>
+        <span>Knowledge</span>
+      </button>
+
+      <button class="nav-item" data-page="customers">
+        <span>♙</span>
+        <span>Customers</span>
+      </button>
+
+      <button class="nav-item" data-page="orders">
+        <span>▣</span>
+        <span>Orders</span>
+      </button>
+
+      <button class="nav-item" data-page="testing">
+        <span>▷</span>
+        <span>Testing</span>
+      </button>
+
+      <button class="nav-item" data-page="activity">
+        <span>◴</span>
+        <span>Activity</span>
+      </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="workspace-status">
+        <span class="status-dot"></span>
+        Workspace ready
+      </div>
+
+      <button class="nav-item bin-button" data-page="bin">
+        <span>⌫</span>
+        <span>Bin</span>
+      </button>
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="page-dashboard" class="page-section active">
+
+      <div class="page-header">
+        <div>
+          <p class="eyebrow">BUSINESS WORKSPACE</p>
+          <h1>Dashboard</h1>
+          <p class="page-description">
+            Monitor your AI employee and customer operations.
+          </p>
+        </div>
+
+        <button class="primary-button" data-go-page="testing">
+          Test AI Worker
+        </button>
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <span class="stat-label">Customers</span>
+          <strong id="dashboard-customers">0</strong>
+          <span class="stat-foot">Stored customers</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Orders</span>
+          <strong id="dashboard-orders">0</strong>
+          <span class="stat-foot">Tracked orders</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Tasks Run</span>
+          <strong id="dashboard-tasks">0</strong>
+          <span class="stat-foot">AI worker executions</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Resolved</span>
+          <strong id="dashboard-resolved">0</strong>
+          <span class="stat-foot">Successfully handled</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Escalated</span>
+          <strong id="dashboard-escalated">0</strong>
+          <span class="stat-foot">Sent to humans</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Success Rate</span>
+          <strong id="dashboard-success">0%</strong>
+          <span class="stat-foot">Worker performance</span>
+        </div>
+
+      </div>
+
+
+      <div class="dashboard-grid">
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">AI EMPLOYEE</p>
+              <h2 id="dashboard-worker-name">AI Customer Operations Worker</h2>
+            </div>
+            <span id="dashboard-worker-status" class="badge success">Active</span>
+          </div>
+
+          <p class="panel-description">
+            Handles repetitive customer-operation work, investigates delivery
+            problems, follows business rules, takes permitted actions and
+            escalates cases that require human attention.
+          </p>
+
+          <div class="worker-capabilities">
+
+            <div class="capability">
+              <span class="check">✓</span>
+              <div>
+                <strong>Customer lookup</strong>
+                <small>Find customer information</small>
+              </div>
+            </div>
+
+            <div class="capability">
+              <span class="check">✓</span>
+              <div>
+                <strong>Order investigation</strong>
+                <small>Find and inspect orders</small>
+              </div>
+            </div>
+
+            <div class="capability">
+              <span class="check">✓</span>
+              <div>
+                <strong>Delivery investigation</strong>
+                <small>Check delivery status</small>
+              </div>
+            </div>
+
+            <div class="capability">
+              <span class="check">✓</span>
+              <div>
+                <strong>Case management</strong>
+                <small>Record operational outcomes</small>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="secondary-button" data-go-page="worker">
+            Open AI Worker
+          </button>
+        </div>
+
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">RECENT ACTIVITY</p>
+              <h2>Latest worker runs</h2>
+            </div>
+          </div>
+
+          <div id="dashboard-activity" class="activity-list">
+            <div class="empty-state small">
+              No worker activity yet.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= AI WORKER ================= -->
+
+    <section id="page-worker" class="page-section">
+
+      <div class="page-header">
+        <div>
+          <p class="eyebrow">AI EMPLOYEE COMMAND CENTER</p>
+          <h1 id="worker-page-name">AI Customer Operations Worker</h1>
+
+          <div class="worker-title-row">
+            <span class="status-dot"></span>
+            <span id="worker-page-status">Active</span>
+          </div>
+
+          <p class="page-description">
+            Your AI employee for customer operations.
+          </p>
+        </div>
+
+        <div class="header-actions">
+          <button class="secondary-button" id="open-worker-config">
+            Configure Worker
+          </button>
+
+          <button class="primary-button" data-go-page="testing">
+            Test Worker
+          </button>
+        </div>
+      </div>
+
+
+      <div class="worker-overview-grid">
+
+        <div class="worker-main-card">
+
+          <div class="worker-main-top">
+
+            <div class="ai-avatar">
+              AI
+            </div>
+
+            <div>
+              <p class="eyebrow">ACTIVE AI EMPLOYEE</p>
+              <h2 id="worker-card-name">AI Customer Operations Worker</h2>
+              <p>
+                Handles customer problems from investigation through resolution.
+              </p>
+            </div>
+
+            <span id="worker-card-badge" class="badge success">
+              Active
+            </span>
+
+          </div>
+
+          <div class="worker-purpose">
+
+            <h3>What this worker does</h3>
+
+            <p>
+              The worker receives a customer-operation problem, understands
+              what needs to be done, finds the relevant customer and order,
+              investigates the delivery status, applies your business rules,
+              takes an allowed action, verifies the result, records the work,
+              and escalates when necessary.
+            </p>
+
+          </div>
+
+          <div class="worker-loop">
+
+            <div>1. Receive</div>
+            <span>→</span>
+            <div>2. Understand</div>
+            <span>→</span>
+            <div>3. Retrieve</div>
+            <span>→</span>
+            <div>4. Investigate</div>
+            <span>→</span>
+            <div>5. Decide</div>
+            <span>→</span>
+            <div>6. Act</div>
+            <span>→</span>
+            <div>7. Verify</div>
+            <span>→</span>
+            <div>8. Log</div>
+
+          </div>
+
+        </div>
+
+
+        <div class="worker-health-card">
+
+          <p class="eyebrow">WORKER HEALTH</p>
+
+          <div class="health-number" id="worker-success-rate">
+            0%
+          </div>
+
+          <strong>Success rate</strong>
+
+          <p>
+            Based on completed worker tasks.
+          </p>
+
+          <div class="health-divider"></div>
+
+          <div class="mini-stat">
+            <span>Tasks</span>
+            <strong id="worker-tasks">0</strong>
+          </div>
+
+          <div class="mini-stat">
+            <span>Resolved</span>
+            <strong id="worker-resolved">0</strong>
+          </div>
+
+          <div class="mini-stat">
+            <span>Escalated</span>
+            <strong id="worker-escalated">0</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="three-column-grid">
+
+        <div class="panel">
+
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">KNOWLEDGE</p>
+              <h2>What it knows</h2>
+            </div>
+          </div>
+
+          <ul class="feature-list">
+
+            <li>
+              <span>✓</span>
+              Company information
+            </li>
+
+            <li>
+              <span>✓</span>
+              Delivery rules
+            </li>
+
+            <li>
+              <span>✓</span>
+              Refund rules
+            </li>
+
+            <li>
+              <span>✓</span>
+              Response examples
+            </li>
+
+          </ul>
+
+          <button class="text-button" data-go-page="knowledge">
+            Manage knowledge →
+          </button>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">TOOLS</p>
+              <h2>What it can do</h2>
+            </div>
+          </div>
+
+          <ul class="feature-list">
+
+            <li>
+              <span>✓</span>
+              Find customer
+            </li>
+
+            <li>
+              <span>✓</span>
+              Find order
+            </li>
+
+            <li>
+              <span>✓</span>
+              Check delivery status
+            </li>
+
+            <li>
+              <span>✓</span>
+              Update case
+            </li>
+
+            <li>
+              <span>✓</span>
+              Escalate to human
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">WORKFLOWS</p>
+              <h2>Current workflows</h2>
+            </div>
+          </div>
+
+          <div class="workflow-item">
+            <span class="workflow-icon">1</span>
+            <div>
+              <strong>Delayed delivery</strong>
+              <small>Active</small>
+            </div>
+          </div>
+
+          <div class="workflow-item">
+            <span class="workflow-icon">2</span>
+            <div>
+              <strong>Tracking request</strong>
+              <small>Active</small>
+            </div>
+          </div>
+
+          <div class="workflow-item">
+            <span class="workflow-icon">3</span>
+            <div>
+              <strong>Missing package</strong>
+              <small>Active</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="panel execution-panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <p class="eyebrow">EXECUTION CENTER</p>
+            <h2>Latest worker execution</h2>
+            <p>See how the AI employee handled its latest task.</p>
+          </div>
+
+          <button class="primary-button" data-go-page="testing">
+            Run Test
+          </button>
+
+        </div>
+
+        <div id="worker-execution">
+
+          <div class="empty-state">
+            <div class="empty-icon">▷</div>
+            <h3>No execution yet</h3>
+            <p>
+              Run a test to see the AI worker investigate and resolve a customer
+              problem.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WORKER CONFIGURATION -->
+
+      <div id="worker-config" class="panel configuration-panel hidden">
+
+        <div class="panel-heading">
+
+          <div>
+            <p class="eyebrow">CONFIGURATION</p>
+            <h2>Configure Worker</h2>
+            <p>Control the identity, behavior and permitted actions.</p>
+          </div>
+
+          <button id="close-worker-config" class="icon-button">
+            ×
+          </button>
+
+        </div>
+
+        <div class="form-grid">
+
+          <label>
+            Worker name
+            <input id="worker-name" type="text">
+          </label>
+
+          <label>
+            Response style
+
+            <select id="response-style">
+              <option value="professional">Professional</option>
+              <option value="friendly">Friendly</option>
+              <option value="concise">Concise</option>
+            </select>
+
+          </label>
+
+        </div>
+
+        <div class="permissions">
+
+          <h3>Allowed actions</h3>
+
+          <label class="toggle-row">
+            <span>
+              <strong>Update cases</strong>
+              <small>Allow the worker to record case outcomes.</small>
+            </span>
+            <input id="allow-case-update" type="checkbox">
+          </label>
+
+          <label class="toggle-row">
+            <span>
+              <strong>Escalate to humans</strong>
+              <small>Allow the worker to send cases for human review.</small>
+            </span>
+            <input id="allow-escalation" type="checkbox">
+          </label>
+
+        </div>
+
+        <button id="save-worker-settings" class="primary-button">
+          Save Worker Settings
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= TEACH WORKER ================= -->
+
+    <section id="page-teach" class="page-section">
+
+      <div class="page-header">
+        <div>
+          <p class="eyebrow">WORKER INSTRUCTIONS</p>
+          <h1>Teach Worker</h1>
+          <p class="page-description">
+            Give your AI employee the information and rules it needs to operate.
+          </p>
+        </div>
+      </div>
+
+      <div class="notice">
+        <strong>How teaching works</strong>
+        <p>
+          You are not training a new AI model here. You are giving the worker
+          business knowledge, instructions, examples and operating rules that
+          it can use when handling customer work.
+        </p>
+      </div>
+
+      <div class="panel">
+
+        <div class="form-grid">
+
+          <label>
+            Company name
+            <input id="company-name" type="text" placeholder="Your company">
+          </label>
+
+          <label>
+            Company description
+            <input id="company-description" type="text"
+                   placeholder="What your company does">
+          </label>
+
+        </div>
+
+        <label>
+          Worker instructions
+
+          <textarea id="worker-instructions" rows="8"
+            placeholder="Example: Always verify the customer and order before discussing an order. Follow the company's delivery policy. Never invent tracking information. Escalate when the required information is unavailable."></textarea>
+
+        </label>
+
+        <label>
+          Response example
+
+          <textarea id="response-example" rows="6"
+            placeholder="Example of how you want the worker to communicate with customers."></textarea>
+
+        </label>
+
+        <button id="save-teaching" class="primary-button">
+          Save Worker Teaching
+        </button>
+
+        <span id="teaching-saved" class="saved-message"></span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= KNOWLEDGE ================= -->
+
+    <section id="page-knowledge" class="page-section">
+
+      <div class="page-header">
+
+        <div>
+          <p class="eyebrow">BUSINESS KNOWLEDGE</p>
+          <h1>Knowledge</h1>
+          <p class="page-description">
+            Store the policies and information your AI worker should use.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="knowledge-layout">
+
+        <div class="panel">
+
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">ADD KNOWLEDGE</p>
+              <h2>New knowledge item</h2>
+            </div>
+          </div>
+
+          <label>
+            Title
+            <input id="knowledge-title" type="text"
+                   placeholder="Delayed delivery policy">
+          </label>
+
+          <label>
+            Category
+
+            <select id="knowledge-category">
+              <option value="Company">Company</option>
+              <option value="Delivery">Delivery</option>
+              <option value="Refund">Refund</option>
+              <option value="Customer Service">Customer Service</option>
+              <option value="Other">Other</option>
+            </select>
+
+          </label>
+
+          <label>
+            Content
+
+            <textarea id="knowledge-content" rows="8"
+              placeholder="Write the policy or business information here."></textarea>
+
+          </label>
+
+          <button id="add-knowledge" class="primary-button">
+            Add Knowledge
+          </button>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div class="panel-heading">
+
+            <div>
+              <p class="eyebrow">KNOWLEDGE BASE</p>
+              <h2>Your business rules</h2>
+            </div>
+
+            <span id="knowledge-count" class="badge neutral">0</span>
+
+          </div>
+
+          <div id="knowledge-list"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CUSTOMERS ================= -->
+
+    <section id="page-customers" class="page-section">
+
+      <div class="page-header">
+
+        <div>
+          <p class="eyebrow">CUSTOMER DATA</p>
+          <h1>Customers</h1>
+          <p class="page-description">
+            Customer records available to your AI worker.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">ADD CUSTOMER</p>
+            <h2>Customer record</h2>
+          </div>
+        </div>
+
+        <div class="form-grid">
+
+          <label>
+            Name
+            <input id="customer-name" type="text" placeholder="John Smith">
+          </label>
+
+          <label>
+            Email
+            <input id="customer-email" type="email"
+                   placeholder="john@example.com">
+          </label>
+
+          <label>
+            Customer ID
+            <input id="customer-id" type="text"
+                   placeholder="CUST-1001">
+          </label>
+
+        </div>
+
+        <button id="add-customer" class="primary-button">
+          Add Customer
+        </button>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <p class="eyebrow">CUSTOMER DATABASE</p>
+            <h2>Customers</h2>
+          </div>
+
+          <span id="customer-count" class="badge neutral">0</span>
+
+        </div>
+
+        <div id="customer-list" class="data-list"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ORDERS ================= -->
+
+    <section id="page-orders" class="page-section">
+
+      <div class="page-header">
+
+        <div>
+          <p class="eyebrow">ORDER DATA</p>
+          <h1>Orders</h1>
+          <p class="page-description">
+            Orders that the AI worker can investigate.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">ADD ORDER</p>
+            <h2>Order record</h2>
+          </div>
+        </div>
+
+        <div class="form-grid">
+
+          <label>
+            Order ID
+            <input id="order-id" type="text" placeholder="1001">
+          </label>
+
+          <label>
+            Customer ID
+            <input id="order-customer-id" type="text"
+                   placeholder="CUST-1001">
+          </label>
+
+          <label>
+            Product
+            <input id="order-product" type="text"
+                   placeholder="Product">
+          </label>
+
+          <label>
+            Order date
+            <input id="order-date" type="date">
+          </label>
+
+          <label>
+            Delivery status
+
+            <select id="order-status">
+              <option value="Processing">Processing</option>
+              <option value="Shipped">Shipped</option>
+              <option value="In Transit">In Transit</option>
+              <option value="Delayed">Delayed</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Missing">Missing</option>
+            </select>
+
+          </label>
+
+          <label>
+            Expected delivery
+            <input id="order-expected" type="date">
+          </label>
+
+          <label>
+            Tracking number
+            <input id="order-tracking" type="text"
+                   placeholder="TRK-1001">
+          </label>
+
+        </div>
+
+        <button id="add-order" class="primary-button">
+          Add Order
+        </button>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <p class="eyebrow">ORDER DATABASE</p>
+            <h2>Orders</h2>
+          </div>
+
+          <span id="order-count" class="badge neutral">0</span>
+
+        </div>
+
+        <div id="order-list" class="data-list"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= TESTING ================= -->
+
+    <section id="page-testing" class="page-section">
+
+      <div class="page-header">
+
+        <div>
+          <p class="eyebrow">WORKER LAB</p>
+          <h1>Testing</h1>
+          <p class="page-description">
+            Give the AI employee a customer problem and watch it work.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="testing-layout">
+
+        <div class="panel">
+
+          <div class="panel-heading">
+
+            <div>
+              <p class="eyebrow">TEST INPUT</p>
+              <h2>Customer problem</h2>
+            </div>
+
+          </div>
+
+          <label>
+            Customer
+
+            <select id="test-customer"></select>
+
+          </label>
+
+          <label>
+            Order
+
+            <select id="test-order"></select>
+
+          </label>
+
+          <label>
+            Problem
+
+            <select id="test-problem">
+
+              <option value="delayed">
+                My delivery is late
+              </option>
+
+              <option value="tracking">
+                Can you check my tracking?
+              </option>
+
+              <option value="missing">
+                My package hasn't arrived
+              </option>
+
+              <option value="order">
+                Can you check my order?
+              </option>
+
+              <option value="human">
+                I want to speak to a human
+              </option>
+
+              <option value="unknown">
+                I have another problem
+              </option>
+
+            </select>
+
+          </label>
+
+          <label>
+            Customer message
+
+            <textarea id="test-message" rows="6"
+              placeholder="Type the customer's message..."></textarea>
+
+          </label>
+
+          <button id="run-worker" class="primary-button large-button">
+            Run AI Worker
+          </button>
+
+        </div>
+
+
+        <div class="panel">
+
+          <div class="panel-heading">
+
+            <div>
+              <p class="eyebrow">LIVE EXECUTION</p>
+              <h2>Worker reasoning</h2>
+            </div>
+
+            <span id="test-result-badge" class="badge neutral">
+              Waiting
+            </span>
+
+          </div>
+
+          <div id="test-execution">
+
+            <div class="empty-state">
+              <div class="empty-icon">AI</div>
+              <h3>Ready to work</h3>
+              <p>
+                Select a customer, order and problem, then run the worker.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ACTIVITY ================= -->
+
+    <section id="page-activity" class="page-section">
+
+      <div class="page-header">
+
+        <div>
+          <p class="eyebrow">AUDIT TRAIL</p>
+          <h1>Activity</h1>
+          <p class="page-description">
+            Every worker execution and operational decision is recorded here.
+          </p>
+
+        </div>
+
+        <button id="clear-activity" class="secondary-button">
+          Clear Activity
+        </button>
+
+      </div>
+
+      <div class="panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <p class="eyebrow">WORKER HISTORY</p>
+            <h2>Activity log</h2>
+          </div>
+
+          <span id="activity-count" class="badge neutral">0</span>
+
+        </div>
+
+        <div id="activity-list"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= BIN ================= -->
+
+    <section id="page-bin" class="page-section">
+
+      <div class="page-header">
+
+        <div>
+          <p class="eyebrow">RECOVERY</p>
+          <h1>Bin</h1>
+          <p class="page-description">
+            Deleted records are stored here during this browser session.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="panel">
+
+        <div id="bin-list"></div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast"></div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

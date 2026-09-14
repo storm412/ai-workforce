@@ -120,19 +120,33 @@ function registerBusiness({
     const passwordHash = bcrypt.hashSync(password, 12);
 
     const createAccount = db.transaction(() => {
+        /**
+         * Create the business.
+         *
+         * The database requires both name and email.
+         */
         const businessResult = db
             .prepare(
                 `
                 INSERT INTO businesses (
-                    name
+                    name,
+                    email
                 )
-                VALUES (?)
+                VALUES (?, ?)
                 `
             )
-            .run(cleanBusinessName);
+            .run(
+                cleanBusinessName,
+                cleanEmail
+            );
 
-        const businessId = Number(businessResult.lastInsertRowid);
+        const businessId = Number(
+            businessResult.lastInsertRowid
+        );
 
+        /**
+         * Create the first user as the business owner.
+         */
         const userResult = db
             .prepare(
                 `
@@ -154,8 +168,13 @@ function registerBusiness({
                 "owner"
             );
 
-        const userId = Number(userResult.lastInsertRowid);
+        const userId = Number(
+            userResult.lastInsertRowid
+        );
 
+        /**
+         * Get the newly-created user.
+         */
         const user = db
             .prepare(
                 `
@@ -393,6 +412,7 @@ function getBusinessById(businessId) {
             SELECT
                 id,
                 name,
+                email,
                 created_at
             FROM businesses
             WHERE id = ?
